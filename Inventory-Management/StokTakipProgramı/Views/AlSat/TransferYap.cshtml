@@ -1,0 +1,118 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "SatisYap";
+
+}
+@{
+    var stokkart = ViewBag.StokKart;
+    var depo = ViewBag.Depo;
+
+}
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Transfer Yap</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form asp-controller="AlSat" asp-action="TransferYap" method="post">
+
+                        <div class="card-body">
+                            <div class="row">
+                                <!-- left column -->
+                                <input type="hidden" asp-for="ProductId" />
+                                <input type="hidden" asp-for="StokKartId" />
+                                <input type="hidden" asp-for="ProductAdet" />
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Stok Kodu</label>
+                                        <input disabled value="@stokkart.StokKodu" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Stok Adı</label>
+                                        <input disabled value="@stokkart.StokAdi" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Stok Birim</label>
+                                            <input disabled value="@stokkart.StokBirim" class="form-control">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Aciklama</label>
+                                        <input disabled value="@stokkart.StokAciklama" class="form-control" rows="3">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ürün Adedi</label>
+                                        <input disabled value="@Model.ProductAdet" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ürün Deposu</label>
+                                        <input disabled value="@depo.DepoAdi" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="DepoId">Transfer Deposu</label>
+                                        <select class="form-control" asp-for="DepoId" asp-items="ViewBag.Depolar">
+                                            <option disabled selected>Depo Seçin</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Alış Fiyatı</label>
+                                        <input disabled value="@stokkart.StokAlis" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Satış Fiyatı</label>
+                                        <input disabled value="@stokkart.StokSatis" class="form-control">
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+
+                            <a class="btn btn-danger" asp-controller="AlSat" asp-action="StokTransfer">
+                                İptal
+                            </a>
+                            <button style="margin-right:5px;" type="submit" class="btn btn-primary">Kaydet</button>
+                        </div>
+                        <!-- /.card-body -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+

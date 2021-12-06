@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STOK TAKİP</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="~/Theme/plugins/fontawesome-free/css/all.min.css">
+    <!-- IonIcons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Theme/dist/css/adminlte.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/Theme/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/Theme/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/Theme/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+</head>
+<!--
+`body` tag options:
+
+  Apply one or more of the following classes to to the body tag
+  to get the desired effect
+
+  * sidebar-collapse
+  * sidebar-mini
+-->
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="navbar-search-block">
+                        <form class="form-inline">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+            <a href="https://localhost:44353/" class="brand-link">
+                <img src="~/img/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity:1">
+                <span class="brand-text font-weight-light">STOK TAKİP</span>
+            </a>
+
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+
+
+                <!-- SidebarSearch Form -->
+                <div style="margin-top:10px" class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link ">
+                                <i class="nav-icon fas fa-file-alt"></i>
+                                <p>
+                                    Stok Kartı
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="https://localhost:44353/StokKart/Create" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Stok Kartı Ekle</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+
+                                    <a href="https://localhost:44353/StokKart/Islemler" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Stok Kartı İşlemleri</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://localhost:44353/StokKart/Rapor" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Stok Kartı Rapor</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Ürünler
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="https://localhost:44353/Product/Ekle" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ürün Ekle</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+
+                                    <a href="https://localhost:44353/Product/Islemler" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ürün İşlemleri</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://localhost:44353/Product/Rapor" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ürün Rapor</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    Stok İşlemleri
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="https://localhost:44353/AlSat/StokAl" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Stok-Alış</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://localhost:44353/AlSat/StokSat" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Stok-Satış</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://localhost:44353/AlSat/StokTransfer" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Stok-Transfer</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://localhost:44353/AlSat/Rapor" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Stok-Rapor</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Depo
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="https://localhost:44353/Depo/Create" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Depo Ekle</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://localhost:44353/Depo/Islemler" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Depo İşlemleri</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://localhost:44353/Depo/Rapor" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Depo Rapor</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div style="margin-top:10px" class="content-wrapper">
+
+            <!-- Main content -->
+            @RenderBody()
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="~/Theme/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE -->
+    <script src="~/Theme/dist/js/adminlte.js"></script>
+
+    <!-- DataTables  & Plugins -->
+    <script src="~/Theme/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Theme/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Theme/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/Theme/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/Theme/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/Theme/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/Theme/plugins/jszip/jszip.min.js"></script>
+    <script src="~/Theme/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="~/Theme/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="~/Theme/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/Theme/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="~/Theme/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="~/Theme/plugins/chart.js/Chart.min.js"></script>
+
+
+</body>
+</html>

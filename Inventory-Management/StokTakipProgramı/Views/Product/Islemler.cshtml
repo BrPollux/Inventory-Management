@@ -1,0 +1,172 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Islemler";
+
+}
+@{
+    var stokkart = ViewBag.StokKart;
+    var depo = ViewBag.Depolar;
+}
+
+
+<script src="~/Theme/plugins/jquery/jquery.min.js"></script>
+
+<!-- Main content -->
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div style="margin-top:10px" class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Depo Seçin</h3>                       
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <label>Ürün Deposu</label>
+                            <select class="form-control" id="slctProcedure" name="slctProcedure" asp-items="ViewBag.Depo">
+                                <option value="-1" disabled selected>Depo Seçin</option>
+                            </select>
+                            <br />
+                            <a id="btnAddProcedure" class="btn btn-primary" asp-controller="Product" asp-action="Islemler">
+                                Depo Seç
+                            </a>
+                            <div id="message"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+
+                <div style="margin-top:10px" class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Ürün İşlemleri</h3>
+                       
+                    </div>
+
+                    <!-- /.card-header -->
+                    @if (Model.Count() > 0)
+                    {
+                        <div class="card-body">
+
+
+
+                            <table id="example2" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Ürün Kodu</th>
+                                        <th>Ürün Adı</th>
+                                        <th>Ürün Birimi</th>
+                                        <th>Ürün Açıklama</th>
+                                        <th>Alış Fiyatı</th>
+                                        <th>Satış Fiyatı</th>
+                                        <th>Ürün Adedi</th>
+                                        <th>Depo Adı</th>
+                                        <th></th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            @foreach (var stok in stokkart)
+                                            {
+                                                @if (stok.StokKartId == item.StokKartId)
+                                                {
+                                                    <td>@stok.StokKodu</td>
+                                                    <td>@stok.StokAdi</td>
+                                                    <td>@stok.StokBirim</td>
+                                                    <td style="max-width:300px">@stok.StokAciklama</td>
+                                                    <td>@stok.StokAlis</td>
+                                                    <td>@stok.StokSatis</td>
+                                                }
+                                            }
+                                            <td>@item.ProductAdet</td>
+
+                                            @foreach (var dp in depo)
+                                            {
+                                                @if (dp.DepoId == item.DepoId)
+                                                {
+
+                                                    <td>@dp.DepoAdi</td>
+                                                }
+                                            }
+
+                                            <td>
+                                                <a class="btn btn-primary btn-sm" asp-controller="Product" asp-action="Update" asp-route-id="@item.ProductId">
+                                                    Edit
+                                                </a>
+                                                <a class="btn btn-danger btn-sm" asp-controller="Product" asp-action="Delete" asp-route-id="@item.ProductId"
+                                                   onclick="return confirm('Ürünü silmek istiyor musunuz?');">
+                                                    Delete
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                    }
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-danger">
+                            Ürün Eklenmemiş.
+                        </div>
+                    }
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<!-- Page specific script -->
+<script>
+    $(function () {
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script>
+    $('#btnAddProcedure').click(function (e) {
+        e.preventDefault();
+        var id = $('#slctProcedure').val();
+        if (id > 0) {
+            window.location.href = "https://localhost:44353/Product/Islemler/" + id;
+           
+        }
+        else {
+            $('#message').text(' Lütfen Depo Seçin')
+        }
+    });
+</script>
+
+
+

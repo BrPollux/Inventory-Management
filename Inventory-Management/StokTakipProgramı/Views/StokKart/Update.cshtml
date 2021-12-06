@@ -1,0 +1,83 @@
+﻿@model StokKart
+@{
+    ViewData["Title"] = "Update";
+
+}
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Stok Kartı Güncelle</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form asp-controller="StokKart" asp-action="Update" method="post">
+                        <input type="hidden" asp-for="StokKartId" />
+                        <div class="card-body">
+                            <div class="row">
+                                <!-- left column -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label asp-for="StokKodu">Stok Kodu</label>
+                                        <input asp-for="StokKodu" max="999" min="0" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="StokAdi">Stok Adı</label>
+                                        <input asp-for="StokAdi" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="StokBirim">Stok Birim</label>
+                                            <select class="form-control" asp-for="StokBirim">
+                                                <option>Adet</option>
+                                                <option>Kg</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label asp-for="StokAciklama">Aciklama</label>
+                                        <textarea asp-for="StokAciklama" class="form-control" rows="3" placeholder="Açıklama..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="StokAlis">Alış Fiyatı</label>
+                                        <input asp-for="StokAlis" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="StokSatis">Satış Fiyatı</label>
+                                        <input asp-for="StokSatis" class="form-control">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Güncelle</button>
+
+
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>

@@ -1,0 +1,66 @@
+﻿@model Depo
+@{
+    ViewData["Title"] = "Update";
+
+}
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Depo Güncelle</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form asp-controller="Depo" asp-action="Update" method="post">
+
+                        <input type="hidden" asp-for="DepoId" />
+                        <div class="card-body">
+                            <div class="row">
+                                <!-- left column -->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label asp-for="DepoKodu">Depo Kodu</label>
+                                        <input asp-for="DepoKodu" max="999" min="0" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="DepoAdi">Depo Adı</label>
+                                        <input asp-for="DepoAdi" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="DepoAdres">Depo Adres</label>
+                                        <input asp-for="DepoAdres" class="form-control">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label asp-for="DepoAciklama">Aciklama</label>
+                                    <textarea asp-for="DepoAciklama" class="form-control" rows="3" placeholder="Açıklama..."></textarea>
+                                </div>
+                            </div>
+                           
+
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary ">Güncelle</button>
+                        </div>
+                        <!-- /.card-body -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
